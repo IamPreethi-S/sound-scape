@@ -1,10 +1,16 @@
-// import Image from "next/image";
-
+import getSongs from "@/actions/getSongs";
 import Header from "@/components/Header";
+import ListItem from "@/components/ListItem";
 
-export default function Home() {
+import PageContent from "./components/PageContent";
+
+export const revalidate = 0;
+
+export default async function Home() {
+  const songs = await getSongs();
+
   return (
-  <div
+    <div
       className="
         bg-neutral-900 
         rounded-lg 
@@ -43,6 +49,14 @@ export default function Home() {
           </div>
         </div>
       </Header>
-   </div>
+      <div className="mt-2 mb-7 px-6">
+        <div className="flex justify-between items-center">
+          <h1 className="text-white text-2xl font-semibold">
+            Newest songs
+          </h1>
+        </div>
+        <PageContent songs={songs} />
+      </div>
+    </div>
   )
 }
