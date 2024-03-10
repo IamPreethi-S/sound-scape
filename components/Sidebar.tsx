@@ -2,8 +2,8 @@
 import { HiHome } from "react-icons/hi";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
-import { BiBox, BiSearch } from "react-icons/bi";
-
+import { BiSearch } from "react-icons/bi";
+import Box from "./Box"
 interface SidebarProps{
     children: React.ReactNode;
 }
@@ -38,7 +38,9 @@ const Sidebar:React.FC<SidebarProps> = ({
                 bg-black
                 h-full
                 w-[300px]
-                p-2">
+                p-2
+                "
+                >
                     <Box>
                         SideBar Navigation
                     </Box>
