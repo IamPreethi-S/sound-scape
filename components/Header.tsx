@@ -39,6 +39,9 @@ const Header: React.FC<HeaderProps> = ({
     if (error) {
       toast.error(error.message);
     }
+    else{
+      toast.success('Logged out successfully!')
+    }
   }
 
   return (
